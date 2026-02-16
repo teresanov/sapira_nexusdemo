@@ -68,7 +68,7 @@ export function ProductLayoutClient({
       setLocalSubject(d.subject);
       setLocalBody(d.body);
     }
-  }, [drawerItem?.type, drawerItem?.data.draftId, drafts]);
+  }, [drawerItem?.type, drawerItem?.type === "draft" ? drawerItem.data.draftId : undefined, drafts]);
 
   const handleOpenInLibrary = () => {
     if (drawerItem?.type === "email") {

@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 import { DemoProvider, useDemo } from "@/context/demo-context";
@@ -101,7 +102,7 @@ function ProcessFlowContent() {
   );
 }
 
-export default function ProcessPage() {
+function ProcessPageContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const emailId = searchParams.get("emailId");
@@ -135,5 +136,13 @@ export default function ProcessPage() {
         <ProcessFlowContent />
       </section>
     </DemoProvider>
+  );
+}
+
+export default function ProcessPage() {
+  return (
+    <Suspense fallback={<section className="space-y-4"><p className="text-sm text-neutral-600">Cargando…</p></section>}>
+      <ProcessPageContent />
+    </Suspense>
   );
 }
