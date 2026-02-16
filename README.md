@@ -2,6 +2,8 @@
 
 Demo de Compras Asia: gestión de revisiones BOM (bandeja de entrada, biblioteca, borradores, incidencias).
 
+> Prueba de push desde Cursor — si ves este cambio en GitHub, el flujo funciona.
+
 ## Requisitos
 
 - Node.js 18+
